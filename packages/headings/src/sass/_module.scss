@@ -24,6 +24,7 @@
  * We also set the font-size automatically too. (:
  */
 @for $i from 1 through 6 {
+
 	.uikit-display-#{$i} {
 		font-family: $uikit-font;
 		color: $uikit-colour-Text;
@@ -34,11 +35,12 @@
 		font-weight: bold;
 	}
 
-	p + .uikit-display-#{$i} {
-		margin-top: uikit-space( 1 );
+	.main-content {
+		*:not([class^="uikit-display"]) + .uikit-display-#{$i} {
+			margin-top: uikit-space( 1 );
+		}
 	}
 }
-
 
 .uikit-display-2,
 .uikit-display-3,
